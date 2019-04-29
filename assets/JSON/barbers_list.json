@@ -1,0 +1,16 @@
+{
+  "Barber": [
+    {
+      "Name": "Peacock Barbers",
+      "Address": "21 Whitehall Terrace"
+    },
+    {
+      "Name": "Barnets Barber",
+      "Address": "SR4 6JD"
+    },
+    {
+      "Name": "Denby's Barber Shop",
+      "Address": "2b Cleveland Rd"
+    }
+  ]
+}

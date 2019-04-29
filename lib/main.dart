@@ -95,7 +95,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           Icons.search,
                           color: Colors.white,
                         ),
-
                         filled: true,
                         fillColor: Colors.black45,
                         border: _textBorder(),

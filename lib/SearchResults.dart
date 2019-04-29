@@ -1,4 +1,8 @@
+import 'package:barber/BarberList.dart';
 import 'package:flutter/material.dart';
+
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
 
 class SearchResults extends StatefulWidget{
   final String query;
@@ -11,7 +15,7 @@ class SearchResults extends StatefulWidget{
 
 class _SearchResultsState extends State<SearchResults>{
 
-  var _results = ['hi','Hello', 'How are you?', 'Fine'];
+  var _results = [];
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +31,10 @@ class _SearchResultsState extends State<SearchResults>{
   Widget _buildList (){
     return ListView.builder(
       itemBuilder: (context, i){
+        if (_results == [])
+          setState(() async {
+            _results = await setList();
+          });
         if (i.isOdd)
           return Divider();
 
@@ -39,6 +47,13 @@ class _SearchResultsState extends State<SearchResults>{
       },
     );
   }
+
+  Future<List<Barber>> setList() async{
+    var jsonString = await rootBundle.loadString('assets/JSON/barbers_list.json');
+    var parsed = json.decode(jsonString).cast<Map<String,dynamic>>();
+    return parsed.map<Barber>((json) => Barber.fromJson(json)).toList();
+  }
+
   Widget _buildRow(String result){
     return new ListTile(
       title: new Text(result)

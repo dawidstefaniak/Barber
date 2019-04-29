@@ -49,6 +49,7 @@ flutter:
         - asset: assets/fonts/libel-suit-rg.ttf
   assets:
     - assets/images/barber-main.jpg
+    - assets/JSON/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
