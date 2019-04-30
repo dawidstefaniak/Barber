@@ -15,11 +15,25 @@ class SearchResults extends StatefulWidget{
 
 class _SearchResultsState extends State<SearchResults>{
 
-  var _results = [];
+  BarberList _barberList;
+
+  @override
+  void initState() {
+    super.didChangeDependencies();
+      _setBarbersList();
+  }
+
+  _setBarbersList() async {
+    var jsonString = await rootBundle.loadString('assets/JSON/barbers_list.json');
+    var parsed = json.decode(jsonString);
+    setState(() {
+      _barberList = BarberList.fromJson(parsed);
+    });
+    print(_barberList);
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.query),
@@ -30,34 +44,18 @@ class _SearchResultsState extends State<SearchResults>{
 
   Widget _buildList (){
     return ListView.builder(
-      itemBuilder: (context, i){
-        if (_results == [])
-          setState(() async {
-            _results = await setList();
-          });
+      itemBuilder: (context, i) {
         if (i.isOdd)
           return Divider();
-
-        final index = i ~/ 2;
-        if (index >= _results.length)
-          {
-            _results = _results + _results;
-          }
-        return _buildRow(_results[index]);
+        return _buildRow(_barberList.barbers[0].name);
       },
     );
   }
 
-  Future<List<Barber>> setList() async{
-    var jsonString = await rootBundle.loadString('assets/JSON/barbers_list.json');
-    var parsed = json.decode(jsonString).cast<Map<String,dynamic>>();
-    return parsed.map<Barber>((json) => Barber.fromJson(json)).toList();
-  }
 
   Widget _buildRow(String result){
     return new ListTile(
       title: new Text(result)
     );
   }
-
 }
