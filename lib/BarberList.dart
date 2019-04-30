@@ -1,12 +1,16 @@
-class Barber{
+import 'package:json_annotation/json_annotation.dart';
+
+
+
+class BarberOwn{
   final String name;
   final String address;
 
-  Barber({this.name, this.address});
+  BarberOwn({this.name, this.address});
 
-  factory Barber.fromJson(Map<String, dynamic> json)
+  factory BarberOwn.fromJson(Map<String, dynamic> json)
   {
-    return Barber(
+    return BarberOwn(
         name : json['name'] as String,
         address: json['address'] as String
     );
@@ -19,16 +23,20 @@ class Barber{
       };
 }
 
-class BarberList {
-  final List<Barber> barbers;
-  BarberList({
+
+class BarberListOwn {
+  final List<BarberOwn> barbers;
+  BarberListOwn({
   this.barbers});
 
-  factory BarberList.fromJson(Map<String, dynamic> parsedJson){
+  factory BarberListOwn.fromJson(Map<String, dynamic> parsedJson){
     var barbersFromJson = parsedJson['barbers'] as List;
-    List<Barber> barbersList = barbersFromJson.map((i) =>Barber.fromJson(i)).toList();
-    return new BarberList(
+    List<BarberOwn> barbersList = barbersFromJson.map((i) =>BarberOwn.fromJson(i)).toList();
+    return new BarberListOwn(
       barbers: barbersList
     );
   }
+
+  //Map<String, dynamic> toJson() =>
+      //_$BarberListToJson(this);
 }

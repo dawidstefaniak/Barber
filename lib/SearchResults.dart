@@ -1,4 +1,5 @@
 import 'package:barber/BarberList.dart';
+import 'json/response.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:convert';
@@ -15,19 +16,20 @@ class SearchResults extends StatefulWidget{
 
 class _SearchResultsState extends State<SearchResults>{
 
-  BarberList _barberList;
+  BaseResponse _barberList = new BaseResponse(new List<Barber>());
 
   @override
   void initState() {
     super.didChangeDependencies();
-      _setBarbersList();
+    super.initState();
+    _setBarbersList();
   }
 
   _setBarbersList() async {
     var jsonString = await rootBundle.loadString('assets/JSON/barbers_list.json');
     var parsed = json.decode(jsonString);
     setState(() {
-      _barberList = BarberList.fromJson(parsed);
+      _barberList = BaseResponse.fromJson(parsed);
     });
     print(_barberList);
   }
@@ -44,10 +46,9 @@ class _SearchResultsState extends State<SearchResults>{
 
   Widget _buildList (){
     return ListView.builder(
+      itemCount: _barberList.barbers.length,
       itemBuilder: (context, i) {
-        if (i.isOdd)
-          return Divider();
-        return _buildRow(_barberList.barbers[0].name);
+        return _buildRow(_barberList.barbers[i].name);
       },
     );
   }
@@ -55,7 +56,8 @@ class _SearchResultsState extends State<SearchResults>{
 
   Widget _buildRow(String result){
     return new ListTile(
-      title: new Text(result)
+      title: new Text(result),
+
     );
   }
 }
