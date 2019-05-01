@@ -1,3 +1,4 @@
+import 'package:barber/Models/Font.dart';
 import 'package:barber/SearchResults.dart';
 import 'package:flutter/material.dart';
 
@@ -8,13 +9,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Barber',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         primaryColor: Colors.grey[800]
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Barber Home Page'),
     );
   }
 }
@@ -82,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       textInputAction: TextInputAction.search,
                       style: TextStyle(
                           color: Colors.white,
-                          fontFamily: 'libel-suit-rg',
+                          fontFamily: Font.secondFont,
                           letterSpacing: 2.5),
                       decoration: InputDecoration(
                         hintText: 'Write your location...',
@@ -118,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Text(
                         'Search',
                         style: TextStyle(
-                          fontFamily: 'libel-suit-rg',
+                          fontFamily: Font.secondFont,
                           color: Colors.white,
                           fontSize: 22,
                         ),
@@ -147,6 +148,6 @@ class _MyHomePageState extends State<MyHomePage> {
         letterSpacing: 5,
         wordSpacing: 10,
         height: 1.3,
-        fontFamily: 'Alvaro-Condensed');
+        fontFamily: Font.mainFont);
   }
 }

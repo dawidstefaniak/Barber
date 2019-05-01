@@ -16,8 +16,9 @@ class BaseResponse extends Object{
 class Barber extends Object{
   final String name;
   final String address;
+  final String icon;
 
-  Barber(this.name, this.address);
+  Barber(this.name, this.address, this.icon);
 
   factory Barber.fromJson(Map<String, dynamic> json) => _$BarberFromJson(json);
   Map<String, dynamic> toJson() => _$BarberToJson(this);

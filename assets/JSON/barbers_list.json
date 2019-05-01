@@ -2,15 +2,18 @@
   "barbers": [
     {
       "name": "Peacock Barbers",
-      "address": "21 Whitehall Terrace"
+      "address": "21 Whitehall Terrace",
+      "icon": "armchair.png"
     },
     {
       "name": "Barnets Barber",
-      "address": "SR4 6JD"
+      "address": "SR4 6JD",
+      "icon": "scissors.png"
     },
     {
       "name": "Denby's Barber Shop",
-      "address": "2b Cleveland Rd"
+      "address": "2b Cleveland Rd",
+      "icon": "moustache.png"
     }
   ]
 }
