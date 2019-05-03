@@ -1,7 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
-
-
-
 class BarberOwn{
   final String name;
   final String address;

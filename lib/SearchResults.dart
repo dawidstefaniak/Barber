@@ -1,8 +1,8 @@
-import 'package:barber/BarberList.dart';
 import 'package:barber/SearchResult.dart';
-import 'json/response.dart';
 import 'package:flutter/material.dart';
+import 'Models/Font.dart';
 
+import 'json/response.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -40,9 +40,7 @@ class _SearchResultsState extends State<SearchResults> {
       appBar: AppBar(
         title: Text(
           "Barber",
-          style: TextStyle(
-              fontFamily: 'Alvaro-Condensed', fontSize: 36, letterSpacing: 2),
-        ),
+          style: Font.appBarTextStyle),
         centerTitle: true,
       ),
       body: _buildList(),
