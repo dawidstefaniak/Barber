@@ -35,4 +35,5 @@ class BarberListOwn {
 
   //Map<String, dynamic> toJson() =>
       //_$BarberListToJson(this);
+
 }

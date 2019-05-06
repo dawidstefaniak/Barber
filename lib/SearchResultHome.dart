@@ -1,24 +1,17 @@
 import 'package:barber/Models/Font.dart';
-import 'package:barber/SearchResultBooking.dart';
-import 'package:barber/SearchResultContact.dart';
-import 'package:barber/SearchResultHome.dart';
-import 'package:barber/SearchResultPictures.dart';
 import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
 
-class SearchResult extends StatefulWidget {
+
+class SearchResultHome extends StatefulWidget{
   final Barber barber;
+  _SearchResultHomeState createState() => _SearchResultHomeState();
 
-  _SearchResultState createState() => _SearchResultState();
+  SearchResultHome({Key key, this.barber}) : super(key: key);
 
-  SearchResult({Key key, this.barber}) : super(key: key);
 }
 
-class _SearchResultState extends State<SearchResult> {
-
-  var _selectedIndex = 0;
-
-  static Barber _barber = new Barber("","","");
+class _SearchResultHomeState extends State<SearchResultHome>{
 
   var _daysOfWeek = [
     'Monday',
@@ -32,80 +25,14 @@ class _SearchResultState extends State<SearchResult> {
 
   var _openingTimes = ['9:00-17:00', 'Closed'];
 
-  final List<Widget> _bodyChildren = [
-    SearchResultHome(barber: _barber),
-    SearchResultBooking(barber: _barber),
-    SearchResultPictures(barber: _barber),
-    SearchResultContact(barber: _barber)
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _getAppBar(),
-      bottomNavigationBar: _getBottomNavigationBar(),
-      body: _bodyChildren[_selectedIndex],
-    );
-  }
-
-
-
-  _getBottomNavigationBar() {
-    return BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black54,
-            ),
-            title: Text("Home")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.calendar_today,
-              color: Colors.black54,
-            ),
-            title: Text("Book")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.image,
-              color: Colors.black54,
-            ),
-            title: Text("Picture")),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.contacts,
-              color: Colors.black54,
-            ),
-            title: Text("Contact")),
-      ],
-      currentIndex: _selectedIndex,
-      onTap: _onBottomNavigationItemTapped,
-      type: BottomNavigationBarType.fixed,
-    );
-  }
-
-  _onBottomNavigationItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      // Setting _barber to send to the next navigation class
-      _barber = new Barber(widget.barber.name, widget.barber.address, widget.barber.icon);
-    });
-  }
-
-  _getAppBar() {
-    return AppBar(
-      centerTitle: true,
-      title: Text(widget.barber.name, style: Font.appBarTextStyle),
-    );
-  }
-
-  _getBody() {
     return ListView(
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(25),
-              bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+            bottomLeft: Radius.circular(25),
           ),
           child: Container(
             height: 200,
@@ -113,9 +40,9 @@ class _SearchResultState extends State<SearchResult> {
               children: <Widget>[
                 Positioned.fill(
                     child: Image.asset(
-                  'assets/images/barber2.jpg',
-                  fit: BoxFit.fill,
-                )),
+                      'assets/images/barber2.jpg',
+                      fit: BoxFit.fill,
+                    )),
                 Positioned.fill(
                   child: Opacity(
                     opacity: 0.6,
@@ -196,7 +123,7 @@ class _SearchResultState extends State<SearchResult> {
                     child: Text(
                       'Opening times',
                       style:
-                          TextStyle(fontFamily: Font.secondFont, fontSize: 32),
+                      TextStyle(fontFamily: Font.secondFont, fontSize: 32),
                     ),
                   ),
                 ),
@@ -241,4 +168,6 @@ class _SearchResultState extends State<SearchResult> {
     }
     return widgets;
   }
+
+
 }
