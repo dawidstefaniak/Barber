@@ -13,8 +13,6 @@ class SearchResultBooking extends StatefulWidget{
 }
 
 class _SearchResultBookingState extends State<SearchResultBooking>{
-
-
   @override
   Widget build(BuildContext context) {
 
@@ -27,6 +25,7 @@ class _SearchResultBookingState extends State<SearchResultBooking>{
         headerTextStyle: TextStyle(color: Colors.black87, fontSize: 22),
         //onDayPressed: (DateTime date, List<Event> events){}
     )
+
     );
 
   }
