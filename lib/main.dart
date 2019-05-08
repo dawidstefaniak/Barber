@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Barber',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
-        primaryColor: Colors.grey[800]
-      ),
+          primarySwatch: Colors.yellow, primaryColor: Colors.grey[800]),
       home: MyHomePage(title: 'Barber Home Page'),
     );
   }
@@ -30,20 +28,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   static var assetImage = AssetImage('assets/images/barber-main.jpg');
 
   @override
   Widget build(BuildContext context) {
-
     TextEditingController _searchController = TextEditingController();
 
     @override
-    void dispose(){
+    void dispose() {
       _searchController.dispose();
       super.dispose();
     }
-
 
     return Scaffold(
       body: Container(
@@ -51,13 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Image(
             image: assetImage,
-            fit: BoxFit.fill,
+            fit: BoxFit.fill
           ),
           Opacity(
             opacity: .7,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: Colors.black
               ),
             ),
           ),
@@ -71,12 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Welcome to \nBarber',
                     textAlign: TextAlign.center,
-                    style: firstTextStyle(),
+                    style: firstTextStyle()
                   ),
                 ),
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 32.0, right: 24, left: 24, bottom: 24),
+                    padding: const EdgeInsets.only(
+                        top: 32.0, right: 24, left: 24, bottom: 24),
                     child: TextField(
                       controller: _searchController,
                       cursorColor: Colors.white,
@@ -86,36 +82,42 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontFamily: Font.secondFont,
                           letterSpacing: 2.5),
                       decoration: InputDecoration(
-                        hintText: 'Write your location...',
-                        labelText: 'Search',
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.white54),
-                        hintStyle:
-                            TextStyle(color: Colors.white30, letterSpacing: 1),
-                        suffixIcon: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                        ),
-                        filled: true,
-                        fillColor: Colors.black45,
-                        border: _textBorder(),
-                        enabledBorder: _textBorder(),
-                        focusedBorder: _textBorder()
-                      ),
+                          hintText: 'Write your location...',
+                          labelText: 'Search',
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.white54),
+                          hintStyle: TextStyle(
+                              color: Colors.white30, letterSpacing: 1),
+                          suffixIcon: Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
+                          filled: true,
+                          fillColor: Colors.black45,
+                          border: _textBorder(),
+                          enabledBorder: _textBorder(),
+                          focusedBorder: _textBorder()),
                     ),
                   ),
                 ),
                 Container(
-                child: OutlineButton(
-                  borderSide: BorderSide(color: Colors.white),
-                  splashColor: Colors.black,
-                  highlightedBorderColor: Colors.white,
-                  onPressed: () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SearchResults(query: _searchController.text,)));
-                  },
+                  child: OutlineButton(
+                    borderSide: BorderSide(color: Colors.white),
+                    splashColor: Colors.black,
+                    highlightedBorderColor: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SearchResults(
+                                query: _searchController.text,
+                              ),
+                        ),
+                      );
+                    },
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8, right: 8),
+                      padding: const EdgeInsets.only(
+                          top: 8, bottom: 8, left: 8, right: 8),
                       child: Text(
                         'Search',
                         style: TextStyle(
@@ -141,6 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
         borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(color: Colors.yellow));
   }
+
   TextStyle firstTextStyle() {
     return TextStyle(
         fontSize: 42,
