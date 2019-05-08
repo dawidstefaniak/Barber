@@ -1,12 +1,10 @@
-# barber
+# Barber
 
-Barber app
+The project is created to enhance my portfolio. The parts of the application can be used in any way you want. The pictures included in the project are free for commercial use.
 
-## Information
+## License
 
-The project is created to enhance my portfolio. The parts of the application can be used in any way you want. 
-
-All the pictures used in this project are free for commercial use.
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
 ![](pictures/whiteitem.png)
 ![](pictures/whitelist.png)
