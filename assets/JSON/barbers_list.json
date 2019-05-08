@@ -14,6 +14,36 @@
       "name": "Denby's Barber Shop",
       "address": "2b Cleveland Rd",
       "icon": "moustache.png"
+    },
+    {
+      "name": "SB Barbering Academy",
+      "address": "SR1 1TP",
+      "icon": "brush.png"
+    },
+    {
+      "name": "Ottoman Barbers",
+      "address": "2 Derwent St",
+      "icon": "hair-spray.png"
+    },
+    {
+      "name": "The Clip Joint",
+      "address": "161 Cleveland Rd",
+      "icon": "barber-shop.png"
+    },
+    {
+      "name": "Swav Hair Studio",
+      "address": "151 Hylton Rd",
+      "icon": "cream.png"
+    },
+    {
+      "name": "Abadan Barbers",
+      "address": "198 Chester Rd",
+      "icon": "mirror.png"
+    },
+    {
+      "name": "Good Fellas Barber Shop",
+      "address": "SR4 7BB",
+      "icon": "razor.png"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import 'package:barber/Models/Font.dart';
 import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 
 class SearchResultHome extends StatefulWidget {
   final Barber barber;
@@ -119,6 +120,7 @@ class _SearchResultHomeState extends State<SearchResultHome> {
               widget.barber.name,
               style: TextStyle(
                   fontFamily: Font.mainFont,
+
                   fontSize: 36,
                   color: Color(0xff685408)),
             ),
@@ -148,13 +150,25 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 16),
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    primary: false,
-                    childAspectRatio: 8,
-                    mainAxisSpacing: 1,
-                    shrinkWrap: true,
-                    children: _dayOfTheWeekRows(),
+                  child:  Column(
+                    children: <Widget>[
+                      if (Platform.isAndroid) GridView.count(
+                        crossAxisCount: 2,
+                        primary: false,
+                        childAspectRatio: 8,
+                        mainAxisSpacing: 1,
+                        shrinkWrap: true,
+                        children: _dayOfTheWeekRows(),
+                      ),
+                      if (Platform.isIOS) GridView.count(
+                        crossAxisCount: 2,
+                        primary: false,
+                        childAspectRatio: 6,
+                        mainAxisSpacing: 1,
+                        shrinkWrap: true,
+                        children: _dayOfTheWeekRows(),
+                      )
+                    ],
                   ),
                 ),
               ],
