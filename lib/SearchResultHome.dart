@@ -58,7 +58,7 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                           child: Opacity(
                             opacity: 0.6,
                             child: Container(
-                              color: Colors.black26,
+                              color: Colors.black45,
                             ),
                           ),
                         ),
