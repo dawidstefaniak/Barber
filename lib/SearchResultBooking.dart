@@ -14,6 +14,7 @@ class SearchResultBooking extends StatefulWidget{
 
 class _SearchResultBookingState extends State<SearchResultBooking>{
 
+
   var _selectedDateTime = new DateTime.now();
   var _markedDatesMap = new EventList<DateTime>();
 
@@ -23,9 +24,10 @@ class _SearchResultBookingState extends State<SearchResultBooking>{
     return Container(
       child: CalendarCarousel(
         firstDayOfWeek: int.fromEnvironment("Mon"),
-        selectedDayButtonColor: Color(0xff685408),
+        selectedDayButtonColor: Colors.black26,
         todayButtonColor: Colors.black54,
         iconColor: Colors.black54,
+        dayButtonColor: Colors.transparent,
         selectedDateTime: _selectedDateTime,
         onDayPressed: (DateTime datetime, List<dynamic> dynamic){
           setState(() {
@@ -37,9 +39,7 @@ class _SearchResultBookingState extends State<SearchResultBooking>{
         headerTextStyle: TextStyle(color: Colors.black87, fontSize: 22),
     )
     );
-
   }
-
 }
 
 
