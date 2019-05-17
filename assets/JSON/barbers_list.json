@@ -3,47 +3,83 @@
     {
       "name": "Peacock Barbers",
       "address": "21 Whitehall Terrace",
-      "icon": "armchair.png"
+      "icon": "armchair.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Barnets Barber",
       "address": "SR4 6JD",
-      "icon": "scissors.png"
+      "icon": "scissors.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Denby's Barber Shop",
       "address": "2b Cleveland Rd",
-      "icon": "moustache.png"
+      "icon": "moustache.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "SB Barbering Academy",
       "address": "SR1 1TP",
-      "icon": "brush.png"
+      "icon": "brush.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Ottoman Barbers",
       "address": "2 Derwent St",
-      "icon": "hair-spray.png"
+      "icon": "hair-spray.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "The Clip Joint",
       "address": "161 Cleveland Rd",
-      "icon": "barber-shop.png"
+      "icon": "barber-shop.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Swav Hair Studio",
       "address": "151 Hylton Rd",
-      "icon": "cream.png"
+      "icon": "cream.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Abadan Barbers",
       "address": "198 Chester Rd",
-      "icon": "mirror.png"
+      "icon": "mirror.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     },
     {
       "name": "Good Fellas Barber Shop",
       "address": "SR4 7BB",
-      "icon": "razor.png"
+      "icon": "razor.png",
+      "images": [
+        {"link": "barber1.jpg"},
+        {"link": "barber2.jpg"}
+      ]
     }
   ]
 }
