@@ -1,6 +1,8 @@
 import 'package:barber/SearchResult.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Models/Font.dart';
+import 'package:barber/BarberFromFirebase.dart' as FirebaseBarber;
 
 import 'json/response.dart';
 import 'dart:convert';
@@ -38,13 +40,51 @@ class _SearchResultsState extends State<SearchResults> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Barber",
-          style: Font.appBarTextStyle),
+        title: Text("Barber", style: Font.appBarTextStyle),
         centerTitle: true,
       ),
-      body: _buildList(),
+      //body: _buildList(),
+      body: _buildBody(context),
     );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+        stream: Firestore.instance.collection('barbers').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) return LinearProgressIndicator();
+
+          return _buildFirestoreList(context, snapshot.data.documents);
+        });
+  }
+
+  Widget _buildFirestoreList(BuildContext context, List<DocumentSnapshot> snapshot) {
+    return ListView(
+      padding: const EdgeInsets.only(top: 20.0),
+      children: snapshot
+          .map((data) => _buildFirebaseListItem(context, data))
+          .toList(),
+    );
+  }
+
+  Widget _buildFirebaseListItem(BuildContext context, DocumentSnapshot data) {
+    final record = FirebaseBarber.Barber.fromSnapshot(data);
+
+   return Padding(
+     key: ValueKey(record.name),
+     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+     child: Container(
+       decoration: BoxDecoration(
+         border: Border.all(color: Colors.grey),
+         borderRadius: BorderRadius.circular(5.0),
+       ),
+       child: ListTile(
+         title: Text(record.name),
+         trailing: Text(record.address),
+         onTap: () => print(record),
+       ),
+     ),
+   );
   }
 
   Widget _buildList() {
@@ -71,7 +111,12 @@ class _SearchResultsState extends State<SearchResults> {
         radius: 35,
         backgroundColor: Colors.black12,
       ),
-      onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => SearchResult(barber: barber)));},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SearchResult(barber: barber)));
+      },
     );
   }
 }
