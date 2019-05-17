@@ -4,6 +4,7 @@
       "name": "Peacock Barbers",
       "address": "21 Whitehall Terrace",
       "icon": "armchair.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -13,6 +14,7 @@
       "name": "Barnets Barber",
       "address": "SR4 6JD",
       "icon": "scissors.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -22,6 +24,7 @@
       "name": "Denby's Barber Shop",
       "address": "2b Cleveland Rd",
       "icon": "moustache.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -31,6 +34,7 @@
       "name": "SB Barbering Academy",
       "address": "SR1 1TP",
       "icon": "brush.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -40,6 +44,7 @@
       "name": "Ottoman Barbers",
       "address": "2 Derwent St",
       "icon": "hair-spray.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -49,6 +54,7 @@
       "name": "The Clip Joint",
       "address": "161 Cleveland Rd",
       "icon": "barber-shop.png",
+      "phone": "+44 7752 291823",
       "images": [
         {"link": "barber1.jpg"},
         {"link": "barber2.jpg"}
@@ -57,6 +63,7 @@
     {
       "name": "Swav Hair Studio",
       "address": "151 Hylton Rd",
+      "phone": "+44 7752 291823",
       "icon": "cream.png",
       "images": [
         {"link": "barber1.jpg"},
@@ -66,6 +73,7 @@
     {
       "name": "Abadan Barbers",
       "address": "198 Chester Rd",
+      "phone": "+44 7752 291823",
       "icon": "mirror.png",
       "images": [
         {"link": "barber1.jpg"},
@@ -75,6 +83,7 @@
     {
       "name": "Good Fellas Barber Shop",
       "address": "SR4 7BB",
+      "phone": "+44 7752 291823",
       "icon": "razor.png",
       "images": [
         {"link": "barber1.jpg"},

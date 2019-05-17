@@ -155,7 +155,7 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                       if (Platform.isAndroid) GridView.count(
                         crossAxisCount: 2,
                         primary: false,
-                        childAspectRatio: 8,
+                        childAspectRatio: 7,
                         mainAxisSpacing: 1,
                         shrinkWrap: true,
                         children: _dayOfTheWeekRows(),

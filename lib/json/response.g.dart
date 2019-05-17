@@ -21,6 +21,7 @@ Barber _$BarberFromJson(Map<String, dynamic> json) {
       json['name'] as String,
       json['address'] as String,
       json['icon'] as String,
+      json['phone'] as String,
       (json['images'] as List)
           ?.map((e) => e == null
               ? null
@@ -32,6 +33,7 @@ Map<String, dynamic> _$BarberToJson(Barber instance) => <String, dynamic>{
       'name': instance.name,
       'address': instance.address,
       'icon': instance.icon,
+      'phone': instance.phone,
       'images': instance.images
     };
 

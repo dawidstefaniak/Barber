@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:barber/Models/Font.dart';
+import 'package:barber/Objects/SearchResultObjects.dart';
 import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
 
@@ -18,10 +19,7 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     return ListView(
       
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 24, top: 16, bottom: 8),
-          child: Text("Images", style:TextStyle(fontFamily: Font.secondFont, fontSize: 24),),
-        ),
+        SearchResultObjects.getTopLabel("Pictures"),
         Divider(),
         FutureBuilder<ui.Image>(
             future: _getImageFuture(),
