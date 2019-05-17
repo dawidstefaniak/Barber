@@ -23,10 +23,10 @@ class _SearchResultState extends State<SearchResult> {
       return SearchResultHome(barber: widget.barber);
     }
     if (index == 1){
-      return SearchResultBooking(barber: widget.barber,);
+      return SearchResultPictures(barber: widget.barber,);
     }
     if (index == 2){
-      return SearchResultPictures(barber: widget.barber,);
+      return SearchResultBooking(barber: widget.barber,);
     }
     if (index == 3){
       return SearchResultContact(barber: widget.barber,);
@@ -53,16 +53,17 @@ class _SearchResultState extends State<SearchResult> {
             title: Text("Home")),
         BottomNavigationBarItem(
             icon: Icon(
-              Icons.calendar_today,
-              color: Colors.black54,
-            ),
-            title: Text("Book")),
-        BottomNavigationBarItem(
-            icon: Icon(
               Icons.image,
               color: Colors.black54,
             ),
             title: Text("Picture")),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.calendar_today,
+              color: Colors.black54,
+            ),
+            title: Text("Book")),
+
         BottomNavigationBarItem(
             icon: Icon(
               Icons.contacts,
