@@ -3,7 +3,7 @@ import 'package:barber/SearchResultBooking.dart';
 import 'package:barber/SearchResultContact.dart';
 import 'package:barber/SearchResultHome.dart';
 import 'package:barber/SearchResultPictures.dart';
-import 'package:barber/json/response.dart';
+import 'package:barber/BarberFromFirebase.dart';
 import 'package:flutter/material.dart';
 
 class SearchResult extends StatefulWidget {
@@ -23,7 +23,8 @@ class _SearchResultState extends State<SearchResult> {
       return SearchResultHome(barber: widget.barber);
     }
     if (index == 1){
-      return SearchResultPictures(barber: widget.barber,);
+      //return SearchResultPictures(barber: widget.barber,);
+      return null;
     }
     if (index == 2){
       return SearchResultBooking(barber: widget.barber,);

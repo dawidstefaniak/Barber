@@ -1,9 +1,12 @@
+//TODO add pictures to model first
+/*
+
 import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:barber/Models/Font.dart';
 import 'package:barber/Objects/SearchResultObjects.dart';
-import 'package:barber/json/response.dart';
+import 'package:barber/BarberFromFirebase.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultPictures extends StatefulWidget {
@@ -79,3 +82,4 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     return images;
   }
 }
+*/

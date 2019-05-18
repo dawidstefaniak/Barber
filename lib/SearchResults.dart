@@ -58,35 +58,43 @@ class _SearchResultsState extends State<SearchResults> {
         });
   }
 
-  Widget _buildFirestoreList(BuildContext context, List<DocumentSnapshot> snapshot) {
-    return ListView(
-      padding: const EdgeInsets.only(top: 20.0),
-      children: snapshot
-          .map((data) => _buildFirebaseListItem(context, data))
-          .toList(),
+  Widget _buildFirestoreList(
+      BuildContext context, List<DocumentSnapshot> snapshot) {
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: ListView(
+          itemExtent: 80,
+          children: snapshot
+              .map((data) => _buildFirebaseListItem(context, data))
+              .toList()),
     );
   }
 
   Widget _buildFirebaseListItem(BuildContext context, DocumentSnapshot data) {
     final record = FirebaseBarber.Barber.fromSnapshot(data);
 
-   return Padding(
-     key: ValueKey(record.name),
-     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-     child: Container(
-       decoration: BoxDecoration(
-         border: Border.all(color: Colors.grey),
-         borderRadius: BorderRadius.circular(5.0),
-       ),
-       child: ListTile(
-         title: Text(record.name),
-         trailing: Text(record.address),
-         onTap: () => print(record),
-       ),
-     ),
-   );
+    return new ListTile(
+      title: new Text(record.name),
+      subtitle: new Text(record.address),
+      leading: CircleAvatar(
+        child: Image.asset(
+          "assets/icons/" + record.icon,
+        ),
+        radius: 35,
+        backgroundColor: Colors.black12,
+      ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SearchResult(barber: record),
+          ),
+        );
+      },
+    );
   }
-
+  
+/*
   Widget _buildList() {
     return Padding(
       padding: EdgeInsets.all(8),
@@ -99,6 +107,7 @@ class _SearchResultsState extends State<SearchResults> {
       ),
     );
   }
+
 
   Widget _buildRow(Barber barber) {
     return new ListTile(
@@ -119,4 +128,5 @@ class _SearchResultsState extends State<SearchResults> {
       },
     );
   }
+  */
 }
