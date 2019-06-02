@@ -24,7 +24,6 @@ class _SearchResultState extends State<SearchResult> {
     }
     if (index == 1){
       return SearchResultPictures(barber: widget.barber,);
-      return null;
     }
     if (index == 2){
       return SearchResultBooking(barber: widget.barber,);

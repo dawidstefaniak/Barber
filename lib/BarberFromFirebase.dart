@@ -25,9 +25,3 @@ class Barber extends Object {
       : this.fromMap(snapshot.data, reference: snapshot.reference);
 
 }
-
-class BarberImage extends Object {
-  final String link;
-
-  BarberImage(this.link);
-}
