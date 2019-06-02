@@ -1,5 +1,5 @@
 //TODO add pictures to model first
-/*
+
 
 import 'dart:async';
 import 'dart:ui' as ui;
@@ -48,7 +48,7 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
   }
 
   Future<ui.Image> _getImageFuture() {
-    Image image = Image.asset("assets/images/" + widget.barber.images[0].link);
+    Image image = Image.asset("assets/images/" + widget.barber.images[0]);
     Completer<ui.Image> completer = new Completer<ui.Image>();
 
     image.image
@@ -64,13 +64,13 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     for (var x = 0; x < 6; x++) {
       // Getting each of the images and then add to images list
       widget.barber.images.forEach(
-            (element) =>
+            (image) =>
             images.add(
 
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  "assets/images/" + element.link,
+                  "assets/images/" + image,
                   fit: BoxFit.scaleDown,
                 ),
               ),
@@ -82,4 +82,3 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     return images;
   }
 }
-*/

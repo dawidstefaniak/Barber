@@ -56,7 +56,7 @@ packages:
       name: build_resolvers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   build_runner:
     dependency: "direct dev"
     description:
@@ -194,7 +194,7 @@ packages:
       name: flutter_calendar_carousel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.16"
+    version: "1.3.17"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -484,7 +484,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.12"
+    version: "1.0.13"
   yaml:
     dependency: transitive
     description:

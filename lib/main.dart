@@ -34,12 +34,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     TextEditingController _searchController = TextEditingController();
 
-    @override
-    void dispose() {
-      _searchController.dispose();
-      super.dispose();
-    }
-
     return Scaffold(
       body: Container(
           child: Stack(

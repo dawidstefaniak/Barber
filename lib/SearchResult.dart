@@ -23,7 +23,7 @@ class _SearchResultState extends State<SearchResult> {
       return SearchResultHome(barber: widget.barber);
     }
     if (index == 1){
-      //return SearchResultPictures(barber: widget.barber,);
+      return SearchResultPictures(barber: widget.barber,);
       return null;
     }
     if (index == 2){
