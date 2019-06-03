@@ -6,7 +6,7 @@ class Barber extends Object {
   final String icon;
   final String phone;
   final DocumentReference reference;
-  final List<String> images; 
+  final List<String> images;
 
   Barber.fromMap(Map<String, dynamic> map, {this.reference})
       : assert(map['name'] != null),
@@ -19,9 +19,7 @@ class Barber extends Object {
         icon = map['icon'],
         phone = map['phone'],
         images = map['images'].cast<String>();
-        
 
   Barber.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
-
 }

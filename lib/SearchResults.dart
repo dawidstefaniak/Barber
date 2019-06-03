@@ -93,40 +93,4 @@ class _SearchResultsState extends State<SearchResults> {
       },
     );
   }
-  
-/*
-  Widget _buildList() {
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: ListView.builder(
-        itemCount: _barberList.barbers.length,
-        itemExtent: 80,
-        itemBuilder: (context, i) {
-          return _buildRow(_barberList.barbers[i]);
-        },
-      ),
-    );
-  }
-
-
-  Widget _buildRow(Barber barber) {
-    return new ListTile(
-      title: new Text(barber.name),
-      subtitle: new Text(barber.address),
-      leading: CircleAvatar(
-        child: Image.asset(
-          "assets/icons/" + barber.icon,
-        ),
-        radius: 35,
-        backgroundColor: Colors.black12,
-      ),
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => SearchResult(barber: barber)));
-      },
-    );
-  }
-  */
 }
