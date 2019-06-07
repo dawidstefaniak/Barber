@@ -1,3 +1,4 @@
+import 'package:barber/AddBarber.dart';
 import 'package:barber/SearchResult.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,6 +43,12 @@ class _SearchResultsState extends State<SearchResults> {
       appBar: AppBar(
         title: Text("Barber", style: Font.appBarTextStyle),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: _onPressedAdd,
+          )
+        ],
       ),
       //body: _buildList(),
       body: _buildBody(context),
@@ -92,5 +99,11 @@ class _SearchResultsState extends State<SearchResults> {
         );
       },
     );
+  }
+
+  void _onPressedAdd() {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) => AddBarber(),) 
+      );
   }
 }
