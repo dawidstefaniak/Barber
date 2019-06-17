@@ -23,37 +23,17 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
       children: <Widget>[
         SearchResultObjects.getTopLabel("Pictures"),
         Divider(),
-        FutureBuilder<ui.Image>(
-            future: _getImageFuture(),
-            builder: (BuildContext context, AsyncSnapshot<ui.Image> snapshot) {
-              if (snapshot.hasData) {
-                ui.Image image = snapshot.data;
-
-                return GridView.count(
-                    shrinkWrap: true,
-                    primary: false,
-                    crossAxisCount: 2,
-                    padding: EdgeInsets.only(
-                        top: 15, bottom: 5, left: 25, right: 25),
-                    crossAxisSpacing: 15,
-                    childAspectRatio: (image.width / image.height),
-                    mainAxisSpacing: 25,
-                    children: _getImages());
-              } else
-                return new Container();
-            }),
+        GridView.count(
+            shrinkWrap: true,
+            primary: false,
+            crossAxisCount: 2,
+            padding: EdgeInsets.only(top: 15, bottom: 5, left: 25, right: 25),
+            crossAxisSpacing: 15,
+            childAspectRatio: (1280 / 847),
+            mainAxisSpacing: 25,
+            children: _getImages()),
       ],
     );
-  }
-
-  Future<ui.Image> _getImageFuture() {
-    Image image = Image.asset("assets/images/" + widget.barber.images[0]);
-    Completer<ui.Image> completer = new Completer<ui.Image>();
-
-    image.image
-        .resolve(new ImageConfiguration())
-        .addListener((ImageInfo info, _) => completer.complete(info.image));
-    return completer.future;
   }
 
   _getImages() {
@@ -81,10 +61,10 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
                     PictureView(
                       imageDir: image,
                     ),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) =>
-                        _buildTransition(
-                            child, animation, pictureSize, pictureOffset, image),
+                transitionsBuilder: (context, animation, secondaryAnimation,
+                        child) =>
+                    _buildTransition(
+                        child, animation, pictureSize, pictureOffset, image),
               ),
             );
             setState(() {
@@ -103,13 +83,8 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     });
   }
 
-  _buildTransition(
-    Widget page,
-    Animation<double> animation,
-    Size pictureSize,
-    Offset pictureOffset,
-    String image
-  ) {
+  _buildTransition(Widget page, Animation<double> animation, Size pictureSize,
+      Offset pictureOffset, String image) {
     if (animation.value == 1) return page;
 
     final borderTween = BorderRadiusTween(
@@ -136,21 +111,20 @@ class _SearchResultPicturesState extends State<SearchResultPictures> {
     final radius = borderTween.evaluate(easeInAnimation);
     final size = sizeTween.evaluate(easeInAnimation);
 
-      Widget positionedClippedChild(Widget child) => Positioned(
-      width: size.width,
-      height: size.height,
-      left: offset.dx,
-      top: offset.dy,
-      child: ClipRRect(
-        borderRadius: radius,
-        child: child,
-      ));
+    Widget positionedClippedChild(Widget child) => Positioned(
+        width: size.width,
+        height: size.height,
+        left: offset.dx,
+        top: offset.dy,
+        child: ClipRRect(
+          borderRadius: radius,
+          child: child,
+        ));
 
-      return Stack(
-        children: <Widget>[
-          
-          positionedClippedChild(Image.asset("assets/images/" + image)),
-        ],
-      );
+    return Stack(
+      children: <Widget>[
+        positionedClippedChild(Image.asset("assets/images/" + image)),
+      ],
+    );
   }
 }
