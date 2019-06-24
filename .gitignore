@@ -69,6 +69,7 @@
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 android/app/google-services.json
-android/app/src/debug/AndroidManifest.xml
-android/app/src/main/AndroidManifest.xml
+ios/Runner/AppDelegate.m
 android/app/src/profile/AndroidManifest.xml
+android/app/src/main/AndroidManifest.xml
+android/app/src/debug/AndroidManifest.xml

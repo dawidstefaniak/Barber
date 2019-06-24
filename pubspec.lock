@@ -21,7 +21,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.1.0"
   bloc:
     dependency: "direct main"
     description:
@@ -235,6 +235,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.7"
+  google_maps_flutter:
+    dependency: "direct main"
+    description:
+      name: google_maps_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.19"
   graphs:
     dependency: transitive
     description:
@@ -395,7 +402,7 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.3"
+    version: "2.0.2"
   rxdart:
     dependency: transitive
     description:
@@ -477,7 +484,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.5"
+    version: "0.2.4"
   timing:
     dependency: transitive
     description:
@@ -522,4 +529,4 @@ packages:
     version: "2.1.15"
 sdks:
   dart: ">=2.3.0-dev.0.1 <3.0.0"
-  flutter: ">=1.2.0 <2.0.0"
+  flutter: ">=1.5.0 <2.0.0"

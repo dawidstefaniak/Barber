@@ -152,22 +152,14 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                   padding: const EdgeInsets.only(bottom: 16),
                   child:  Column(
                     children: <Widget>[
-                      if (Platform.isAndroid) GridView.count(
-                        crossAxisCount: 2,
-                        primary: false,
-                        childAspectRatio: 7,
-                        mainAxisSpacing: 1,
-                        shrinkWrap: true,
-                        children: _dayOfTheWeekRows(),
-                      ),
-                      if (Platform.isIOS) GridView.count(
+                      GridView.count(
                         crossAxisCount: 2,
                         primary: false,
                         childAspectRatio: 6,
                         mainAxisSpacing: 1,
                         shrinkWrap: true,
                         children: _dayOfTheWeekRows(),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -175,8 +167,6 @@ class _SearchResultHomeState extends State<SearchResultHome> {
             ),
           ),
         ),
-
-        //Here will be maps
       ],
     );
   }
