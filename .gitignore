@@ -73,3 +73,4 @@ ios/Runner/AppDelegate.m
 android/app/src/profile/AndroidManifest.xml
 android/app/src/main/AndroidManifest.xml
 android/app/src/debug/AndroidManifest.xml
+ios/Runner/GoogleService-Info.plist
