@@ -31,6 +31,7 @@ class _SearchResultState extends State<SearchResult> {
     if (index == 3){
       return SearchResultContact(barber: widget.barber,);
     }
+    else return Container();
   }
 
   @override
