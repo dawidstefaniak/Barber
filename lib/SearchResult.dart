@@ -57,7 +57,7 @@ class _SearchResultState extends State<SearchResult> {
               Icons.image,
               color: Colors.black54,
             ),
-            title: Text("Picture")),
+            title: Text("Pictures")),
         BottomNavigationBarItem(
             icon: Icon(
               Icons.calendar_today,
