@@ -89,13 +89,15 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                   width: 100,
                   height: 100,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                          color: Colors.white,
-                          style: BorderStyle.solid,
-                          width: 2),
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/profile1.jpg"))),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                        color: Colors.white,
+                        style: BorderStyle.solid,
+                        width: 2),
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/profile1.jpg"),
+                    ),
+                  ),
                 ),
               )
             ],
@@ -120,7 +122,6 @@ class _SearchResultHomeState extends State<SearchResultHome> {
               widget.barber.name,
               style: TextStyle(
                   fontFamily: Font.mainFont,
-
                   fontSize: 36,
                   color: Color(0xff685408)),
             ),
@@ -150,7 +151,7 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 16),
-                  child:  Column(
+                  child: Column(
                     children: <Widget>[
                       GridView.count(
                         crossAxisCount: 2,

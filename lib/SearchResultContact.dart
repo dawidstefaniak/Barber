@@ -1,4 +1,3 @@
-import 'package:barber/Models/Font.dart';
 import 'package:barber/Objects/SearchResultObjects.dart';
 import 'package:barber/BarberFromFirebase.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +49,7 @@ class _SearchResultContactState extends State<SearchResultContact> {
           child: Container(
             height: 300,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(25),
               child: GoogleMap(
                 initialCameraPosition: CameraPosition(
                   target: LatLng(54.9069, -1.3838),
