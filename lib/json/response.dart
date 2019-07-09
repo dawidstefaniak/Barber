@@ -24,4 +24,5 @@ class Barber extends Object{
 
   factory Barber.fromJson(Map<String, dynamic> json) => _$BarberFromJson(json);
   Map<String, dynamic> toJson() => _$BarberToJson(this);
+
 }
