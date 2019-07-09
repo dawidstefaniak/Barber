@@ -1,6 +1,7 @@
 import 'package:barber/Models/Font.dart';
 import 'package:barber/SearchResults.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:bloc/bloc.dart';
 
@@ -111,34 +112,53 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: OutlineButton(
-                      borderSide: BorderSide(color: Colors.white),
-                      splashColor: Colors.black,
-                      highlightedBorderColor: Colors.white,
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SearchResults(
-                                  query: _searchController.text,
-                                ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Spacer(),
+                      Container(
+                        child: FlatButton(
+                          child: Text(
+                            'Privacy Policy',
+                            style: TextStyle(color: Colors.blue[300]),
                           ),
-                        );
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            top: 8, bottom: 8, left: 8, right: 8),
-                        child: Text(
-                          'Search',
-                          style: TextStyle(
-                            fontFamily: Font.secondFont,
-                            color: Colors.white,
-                            fontSize: 22,
+                          onPressed: _openPrivacyPolicy,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Container(
+                        child: OutlineButton(
+                          borderSide: BorderSide(color: Colors.white),
+                          splashColor: Colors.black,
+                          highlightedBorderColor: Colors.white,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchResults(
+                                      query: _searchController.text,
+                                    ),
+                              ),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                top: 8, bottom: 8, left: 8, right: 8),
+                            child: Text(
+                              'Search',
+                              style: TextStyle(
+                                fontFamily: Font.secondFont,
+                                color: Colors.white,
+                                fontSize: 22,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      Spacer()
+                    ],
                   ),
                 ],
               ),
@@ -165,4 +185,15 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 1.3,
         fontFamily: Font.mainFont);
   }
+
+  void _openPrivacyPolicy() async{
+   
+  const url = 'https://lapissoft.co.uk/barber-application-privacy-policy/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+  
 }
