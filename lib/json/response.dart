@@ -18,19 +18,10 @@ class Barber extends Object{
   final String address;
   final String icon;
   final String phone;
-  final List<BarberImage> images;
+  final List<String> images;
 
   Barber(this.name, this.address, this.icon, this.phone, this.images);
 
   factory Barber.fromJson(Map<String, dynamic> json) => _$BarberFromJson(json);
   Map<String, dynamic> toJson() => _$BarberToJson(this);
-}
-
-@JsonSerializable()
-class BarberImage extends Object{
-  final String link;
-
-  BarberImage(this.link);
-
-  factory BarberImage.fromJson(Map<String, dynamic> json) => _$BarberImageFromJson(json);
 }

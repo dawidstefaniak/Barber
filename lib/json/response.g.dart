@@ -22,11 +22,7 @@ Barber _$BarberFromJson(Map<String, dynamic> json) {
       json['address'] as String,
       json['icon'] as String,
       json['phone'] as String,
-      (json['images'] as List)
-          ?.map((e) => e == null
-              ? null
-              : BarberImage.fromJson(e as Map<String, dynamic>))
-          ?.toList());
+      (json['images'] as List)?.map((e) => e as String)?.toList());
 }
 
 Map<String, dynamic> _$BarberToJson(Barber instance) => <String, dynamic>{
@@ -36,10 +32,3 @@ Map<String, dynamic> _$BarberToJson(Barber instance) => <String, dynamic>{
       'phone': instance.phone,
       'images': instance.images
     };
-
-BarberImage _$BarberImageFromJson(Map<String, dynamic> json) {
-  return BarberImage(json['link'] as String);
-}
-
-Map<String, dynamic> _$BarberImageToJson(BarberImage instance) =>
-    <String, dynamic>{'link': instance.link};

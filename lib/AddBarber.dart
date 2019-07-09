@@ -1,4 +1,5 @@
 import 'package:barber/Models/Font.dart';
+import 'package:barber/json/response.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -72,16 +73,11 @@ class _AddBarberState extends State<AddBarber> {
     if (_phoneController.text.isNotEmpty &&
         _nameController.text.isNotEmpty &&
         _addressController.text.isNotEmpty) {
+          Barber barber = new Barber(_nameController.text, _addressController.text, "scissors.png",_phoneController.text,["barber1.jpg", "barber2.jpg"]);
       Firestore.instance
           .collection('barbers')
           //TODO use Barber object instead
-          .add({
-            "address": _addressController.text,
-            "icon": "scissors.png",
-            "images": ["barber1.jpg", "barber2.jpg"],
-            "name": _nameController.text,
-            "phone": _phoneController.text
-          })
+          .add(barber.toJson())
           .then((result) => {
                 Navigator.pop(context),
                 _nameController.clear(),
