@@ -1,6 +1,6 @@
 import 'package:barber/Models/Font.dart';
 import 'package:barber/Objects/SearchResultObjects.dart';
-import 'package:barber/BarberFromFirebase.dart';
+import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 

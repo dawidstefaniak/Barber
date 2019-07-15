@@ -1,5 +1,5 @@
 import 'package:barber/Models/Font.dart';
-import 'package:barber/BarberFromFirebase.dart';
+import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultHome extends StatefulWidget {

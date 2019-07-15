@@ -1,6 +1,6 @@
 //TODO add pictures to model first
 import 'package:barber/Objects/SearchResultObjects.dart';
-import 'package:barber/BarberFromFirebase.dart';
+import 'package:barber/json/response.dart';
 import 'package:barber/SearchResultPictureView.dart';
 import 'package:flutter/material.dart';
 

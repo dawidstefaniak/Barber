@@ -1,11 +1,10 @@
 import 'package:barber/AddBarber.dart';
 import 'package:barber/SearchResult.dart';
+import 'package:barber/json/response.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Models/Font.dart';
-import 'package:barber/BarberFromFirebase.dart' as FirebaseBarber;
 
-import 'json/response.dart' as Barber;
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -78,7 +77,7 @@ class _SearchResultsState extends State<SearchResults> {
   }
 
   Widget _buildFirebaseListItem(BuildContext context, DocumentSnapshot data) {
-    final record = Barber.Barber.fromJson(data.data);
+    final record = Barber.fromJson(data.data);
 
     return new ListTile(
       title: new Text(record.name),

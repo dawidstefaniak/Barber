@@ -3,8 +3,8 @@ import 'package:barber/SearchResultBooking.dart';
 import 'package:barber/SearchResultContact.dart';
 import 'package:barber/SearchResultHome.dart';
 import 'package:barber/SearchResultPictures.dart';
-import 'package:barber/BarberFromFirebase.dart';
 import 'package:flutter/material.dart';
+import 'package:barber/json/response.dart';
 
 class SearchResult extends StatefulWidget {
   final Barber barber;

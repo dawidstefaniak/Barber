@@ -22,7 +22,7 @@ Barber _$BarberFromJson(Map<String, dynamic> json) {
       json['address'] as String,
       json['icon'] as String,
       json['phone'] as String,
-      (json['images'] as List)?.map((e) => e as String)?.toList());
+      json['images'].cast<String>());
 }
 
 Map<String, dynamic> _$BarberToJson(Barber instance) => <String, dynamic>{
