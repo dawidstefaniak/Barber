@@ -1,4 +1,5 @@
 import 'package:barber/Models/Font.dart';
+import 'package:barber/Objects/DefaultButton.dart';
 import 'package:barber/SearchResults.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -55,11 +56,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   static var assetImage = AssetImage('assets/images/barber-main.jpg');
-
+  TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController _searchController = TextEditingController();
-
     return Scaffold(
       body: Container(
         child: Stack(
@@ -128,33 +127,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         width: 15,
                       ),
-                      Container(
-                        child: OutlineButton(
-                          borderSide: BorderSide(color: Colors.white),
-                          splashColor: Colors.black,
-                          highlightedBorderColor: Colors.white,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SearchResults(
-                                      query: _searchController.text,
-                                    ),
-                              ),
-                            );
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                top: 8, bottom: 8, left: 8, right: 8),
-                            child: Text(
-                              'Search',
-                              style: TextStyle(
-                                fontFamily: Font.secondFont,
-                                color: Colors.white,
-                                fontSize: 22,
-                              ),
-                            ),
-                          ),
+                      DefaultButton(
+                        isButtonEnabled: true,
+                        text: 'Search',
+                        onPressed: _onSearchPressed,
+                        textColor: Colors.white,
+                        backgroundColor: Colors.transparent,
+                        border: Border.all(
+                          style: BorderStyle.solid,
+                          color: Colors.white,
                         ),
                       ),
                       Spacer()
@@ -165,6 +146,17 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ],
           fit: StackFit.expand,
+        ),
+      ),
+    );
+  }
+
+  _onSearchPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SearchResults(
+          query: _searchController.text,
         ),
       ),
     );
@@ -186,14 +178,12 @@ class _MyHomePageState extends State<MyHomePage> {
         fontFamily: Font.mainFont);
   }
 
-  void _openPrivacyPolicy() async{
-   
-  const url = 'https://lapissoft.co.uk/barber-application-privacy-policy/';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
+  void _openPrivacyPolicy() async {
+    const url = 'https://lapissoft.co.uk/barber-application-privacy-policy/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
-}
-  
 }

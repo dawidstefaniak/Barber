@@ -78,6 +78,7 @@ class _SearchResultHomeState extends State<SearchResultHome> {
                       fontFamily: Font.secondFont,
                       fontSize: 42,
                       color: Color(0xfffffec4),
+                    
                     ),
                   ),
                 ),
